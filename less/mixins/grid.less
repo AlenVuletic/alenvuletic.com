@@ -1,0 +1,10 @@
+/*
+ * Grid - mixins
+ */
+
+.make-columns(@columns; @index: 1) when (@index =< @columns) {
+	.make-columns(@columns; (@index + 1));
+	.column-@{index} {
+		width: (percentage(@index / @columns));
+	}
+}
